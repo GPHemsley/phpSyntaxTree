@@ -33,15 +33,3 @@ evenals een verbetering van het gebruik van de tabulatortoets.
 Daarnaast is de HTML-code wat opgeschoond.
 </p>
 
-<h3>2005-01-04 - phpSyntaxTree nu op SourceForge.net!</h3>
-<p>
-    phpSyntaxTree is nu beschikbaar om te downloaden en ter beoordeling via SourceForge.net. 
-De URL van het project is: <br />
-    <a href="http://sourceforge.net/projects/phpsyntaxtree"
-    >http://sourceforge.net/projects/phpsyntaxtree</a>
-</p>
-<p>
-    We zien je graag aan het project deelnemen. Dien je eventuele wensen, hulpvragen of zelfs 
-verbetervoorstellen in via de de mogelijkheden die SourceForge.net biedt, of stuur een e-mail naar andre@ironcreek.net.
-</p>
-

@@ -1,5 +1,13 @@
 <h2>Aktuelles</h2>
 
+<h3>2006-08-02 - phpSyntaxTree ist umgezogen</h3>
+<p>
+    Das phpSyntaxTree Projekt ist zu Google Code umgezogen.
+    Der Quellcode und Bug-Tracker ist jetzt under folgender
+    URL zu finden: <br />
+    <a href="http://code.google.com/p/phpsyntaxtree">http://code.google.com/p/phpsyntaxtree</a>
+</p>
+
 <h3>2005-08-25 - Wir sprechen Holl&auml;ndisch!</h3>
 <p>
     phpSyntaxTree ist jetzt auch auf Holl&auml;ndisch verf&uuml;gbar.
@@ -37,20 +45,5 @@
     Version 1.9 of phpSyntaxTree verbessert die automatische
     Gr&ouml;ssenabpassung des Eingabefeldes und bietet
     aufger&auml;umten HTML Quelltext.
-</p>
-
-<h3>2005-01-04 - phpSyntaxTree jetzt auf SourceForge.net!</h3>
-<p>
-    phpSyntaxTree ist ab sofort auf SourceForge.net zum 
-    herunterladen und erh&auml;ltlich. Dort kann man nun
-    auch den PHP Quelltext einsehen.<br />
-    Die Addresse des Projektes ist:<br />
-    <a href="http://sourceforge.net/projects/phpsyntaxtree"
-    >http://sourceforge.net/projects/phpsyntaxtree</a>.
-</p>
-<p>
-    Wir freuen uns f&uuml;r jegliche Projektbeteiligung, 
-    Anregungen und Kritik, oder sogar die ein oder andere
-    Programm Korrektur.
 </p>
 
