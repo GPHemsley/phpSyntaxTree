@@ -28,6 +28,8 @@
     {GRAPH}
 </div>
 
+{SVG}
+
 <div id="form2">
     <fieldset>
         <div id="options">

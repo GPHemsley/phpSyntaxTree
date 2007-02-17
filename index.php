@@ -119,6 +119,8 @@ $phrase = htmlentities( $_SESSION['data'] );
 
 $img    = sprintf( "<img src=\"stgraph.png?%s\" alt=\"\" title=\"%s\"/>", SID, $phrase );
 $graph  = sprintf( "<a href=\"dnlgraph.php?%s\">%s</a>", SID, $img );
+$icon   = "<img src=\"img/vectorgfx.png\" alt=\"SVG\" />";
+$svg    = sprintf( "<div id=\"svg\"><a href=\"stgraph.svg?%s\">%s</a></div>", SID, $icon );
 
 $fontoption = sprintf( "SELECT_%s", $_SESSION['fontsel'] );
 $sizeoption = sprintf( "SELECT_size_%d", $_SESSION['fontsize'] );
@@ -127,6 +129,7 @@ $page->SetValues( array(
     'VERSION'       => VERSION,
     'FORM_ACTION'   => sprintf( "?%s", strip_tags( SID )),
     'GRAPH'         => $graph, 
+    'SVG'           => $svg,
     'PHRASE'        => $phrase,
     'DATA_VAL'      => $phrase,
     'COLOR_VAL'     => $_SESSION['color']     ? HTML_CHECKED : HTML_UNCHECKED,

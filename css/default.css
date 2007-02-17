@@ -41,8 +41,13 @@ body {
     background-color: #fff;
 }
 
-#footer img {
+#footer img, #svg img {
     border: 0;
+}
+
+#svg {
+    text-align: center;
+    margin-top: 10px;
 }
 
 #phrase {

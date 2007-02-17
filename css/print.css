@@ -11,7 +11,7 @@ fieldset {
   border: 0;
 }
 
-h1, #about, #usage, #footer, #form, #options, #news, #tip {
+h1, #about, #usage, #footer, #form, #options, #news, #tip, #svg {
   display: none;
 }
 
