@@ -7,12 +7,12 @@
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation; either version 2 of the License, or
 // (at your option) any later version.
-// 
+//
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -51,10 +51,10 @@ if( isset( $_POST['data'] ) )
 
     $_SESSION['data']      = trim( $_POST['data'] );
 
-    $_SESSION['color']     = ( isset( $_POST['color'] )     ? TRUE : FALSE ); 
-    $_SESSION['antialias'] = ( isset( $_POST['antialias'] ) ? TRUE : FALSE ); 
-    $_SESSION['autosub']   = ( isset( $_POST['autosub'] )   ? TRUE : FALSE ); 
-    $_SESSION['triangles'] = ( isset( $_POST['triangles'] ) ? TRUE : FALSE ); 
+    $_SESSION['color']     = ( isset( $_POST['color'] )     ? TRUE : FALSE );
+    $_SESSION['antialias'] = ( isset( $_POST['antialias'] ) ? TRUE : FALSE );
+    $_SESSION['autosub']   = ( isset( $_POST['autosub'] )   ? TRUE : FALSE );
+    $_SESSION['triangles'] = ( isset( $_POST['triangles'] ) ? TRUE : FALSE );
 
     if ( isset( $_POST['font'] ) )
     {
@@ -63,22 +63,22 @@ if( isset( $_POST['data'] ) )
         {
             case 'vera_sans':
                 break;
-            
+
             case 'vera_serif':
                 $font = 'VeraSe.ttf';
                 break;
-                
+
             default:
                 break;
         }
-        
+
         $_SESSION['fontsel'] = $_POST['font'];
         $_SESSION['font']    = $font;
     }
-    
-    $_SESSION['fontsize'] = isset( $_POST['fontsize'] ) 
+
+    $_SESSION['fontsize'] = isset( $_POST['fontsize'] )
         ? intval( $_POST['fontsize'] ) : 8;
-    
+
     // Increment phrase counter (displayed on the bottom of the page)
     AddCounter();
 
@@ -91,7 +91,7 @@ if( isset( $_POST['data'] ) )
     if ( LOG_LANG )
         LogLangSettings();
 } else {
-    // If no phrase was submitted, show 
+    // If no phrase was submitted, show
     //   usage information, news, etc. .
 
     $page = new CTemplate( GetLocalizedFname( 'tpl/intro.html' ));
@@ -103,9 +103,9 @@ if( isset( $_POST['data'] ) )
 
 if ( !isset( $_SESSION['data'] ) )
 {
-    $_SESSION['data']      = file_get_contents( GetLocalizedFname( "var/sample.phrase" )); 
-    $_SESSION['color']     = TRUE; 
-    $_SESSION['antialias'] = TRUE; 
+    $_SESSION['data']      = file_get_contents( GetLocalizedFname( "var/sample.phrase" ));
+    $_SESSION['color']     = TRUE;
+    $_SESSION['antialias'] = TRUE;
     $_SESSION['autosub']   = TRUE;
     $_SESSION['triangles'] = TRUE;
     $_SESSION['fontsel']   = "vera_sans";
@@ -115,12 +115,12 @@ if ( !isset( $_SESSION['data'] ) )
 
 // Render the page
 
-$phrase = htmlentities( $_SESSION['data'] );
+$phrase = htmlentities( $_SESSION['data'], ENT_QUOTES, 'UTF-8' );
 
-$img    = sprintf( "<img src=\"stgraph.png?%s\" alt=\"\" title=\"%s\"/>", SID, $phrase );
+$img    = sprintf( "<img src=\"stgraph.png.php?%s\" alt=\"\" title=\"%s\"/>", SID, $phrase );
 $graph  = sprintf( "<a href=\"dnlgraph.php?%s\">%s</a>", SID, $img );
 $icon   = "<img src=\"img/vectorgfx.png\" alt=\"SVG\" />";
-$svg    = sprintf( "<div id=\"svg\"><a href=\"stgraph.svg?%s\">%s</a></div>", SID, $icon );
+$svg    = sprintf( "<div id=\"svg\"><a href=\"stgraph.svg.php?%s\">%s</a></div>", SID, $icon );
 
 $fontoption = sprintf( "SELECT_%s", $_SESSION['fontsel'] );
 $sizeoption = sprintf( "SELECT_size_%d", $_SESSION['fontsize'] );
@@ -128,7 +128,7 @@ $sizeoption = sprintf( "SELECT_size_%d", $_SESSION['fontsize'] );
 $page->SetValues( array(
     'VERSION'       => VERSION,
     'FORM_ACTION'   => sprintf( "?%s", strip_tags( SID )),
-    'GRAPH'         => $graph, 
+    'GRAPH'         => $graph,
     'SVG'           => $svg,
     'PHRASE'        => $phrase,
     'DATA_VAL'      => $phrase,

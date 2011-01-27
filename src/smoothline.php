@@ -1,13 +1,15 @@
-<?php 
+<?php
 
 // smoothline.php - Anti-aliased line drawing
 //
-// From the PHP documentation at http://php.net/imageline
+// From the PHP documentation at http://php.net/imageline#33122
 // Original author: nanobot@chipx86.com
 //
-// NOTE: It is not yet clear which license the code below
-//       was released under (by posting it on php.net). Therefore
-//       this code may be removed int the future.
+// NOTE: As part of a comment on PHP documentation, this code is licensed
+//       under the Creative Commons Attribution 3.0 License (CC-BY-3.0).
+//
+//       http://php.net/license/#doc-lic
+//       http://creativecommons.org/licenses/by/3.0/
 //
 // TODO: Use faster GPL licensed/free algorithm for anti-aliasing if available.
 //
@@ -16,7 +18,7 @@
 function imagesmoothline( $image, $x1, $y1, $x2, $y2, $color )
 {
     $colors = imagecolorsforindex( $image, $color );
-    
+
     if ($x1 == $x2)
     {
         imageline ($image, $x1, $y1, $x2, $y2, $color);    // Vertical line

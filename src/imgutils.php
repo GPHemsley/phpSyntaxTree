@@ -21,12 +21,17 @@
 //
 // $Id: imgutils.php,v 1.1.1.1 2005/01/05 17:49:14 int2str Exp $
 
+if( !function_exists( 'imagettftext' ) || !function_exists( 'imagettfbbox' ) )
+{
+	require_once( 'ttf_hacks.php' );
+}
+
 function ImgGetTxtWidth( $text, $font, $font_size )
 {
     $bbox  = imagettfbbox( $font_size, 0, $font, $text );
-    $width = 
-        ( ($bbox[0] > 0 && $bbox[2] > 0) || ($bbox[0] < 0 && $bbox[2] < 0) ) 
-            ? abs( $bbox[2] - $bbox[0] ) 
+    $width =
+        ( ($bbox[0] > 0 && $bbox[2] > 0) || ($bbox[0] < 0 && $bbox[2] < 0) )
+            ? abs( $bbox[2] - $bbox[0] )
             : ( abs( $bbox[2] ) + abs( $bbox[0] ) + 1 );
 
     return $width;

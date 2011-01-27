@@ -35,7 +35,7 @@ function escape_high_ascii( $s )
         if ( ord( $c ) < 127 )
             $html .= $c;
         else
-            $html .= sprintf( '&#%d;', ord( $c ) );
+            $html .= "\x1A";//sprintf( '&#%d;', ord( $c ) ); // @TODO: No support for Unicode; using SUB character instead.
     }
 
     return $html;
@@ -50,7 +50,7 @@ class CStringParser
     function CStringParser( $s )
     {
         // Clean up the data a little to make processing easier
-        
+
         $s = str_replace( "\t", "", $s );
         $s = str_replace( "  ", " ", $s );
         $s = str_replace( "] [", "][", $s );
@@ -59,11 +59,11 @@ class CStringParser
         $s = escape_high_ascii( $s );
 
         // Store it for later...
-        
+
         $this->data = $s;
 
-        // Initialize internal element list 
-        
+        // Initialize internal element list
+
         $this->elist = new CElementList();
     }
 
@@ -73,7 +73,7 @@ class CStringParser
           return FALSE;
 
         // TODO: Currently the only real validation is that the brackets match up. There's room for improvement here.
-        
+
         $open = 0;
 
         for( $i=0; $i<strlen( $this->data ); $i++ )
@@ -103,7 +103,7 @@ class CStringParser
     {
         $elements = $this->elist->GetElements();
         $tmpcnt   = array();
-        
+
         foreach( $elements as $element )
         {
             if ( $element->type == ETYPE_NODE )
@@ -129,7 +129,7 @@ class CStringParser
 
         return $this->tncnt;
     }
- 
+
     // ----------------------------------------------------------------------
     // PRIVATE FUNCTIONS
     // ----------------------------------------------------------------------
