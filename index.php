@@ -19,7 +19,7 @@
 //
 // $Id: index.php,v 1.14 2005/08/22 23:31:16 int2str Exp $
 
-define( 'VERSION', '1.11-SVN' );
+define( 'VERSION', '2.0-dev' );
 
 define( 'LOG_PHRASE', 0 );
 define( 'LOG_LANG', 1 );
